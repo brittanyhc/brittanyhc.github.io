@@ -89,6 +89,15 @@ img { max-width: 100%; height: auto; display: block; }
 .nav-links a:hover { color: #4a6fa5; }
 .nav-links a:hover::after { width: 100%; }
 
+/* Edit: Active-state styling for the section currently in view */
+.nav-links a.active {
+  color: #4a6fa5;
+}
+
+.nav-links a.active::after {
+  width: 100%;
+}
+
 /* Hamburger */
 .nav-toggle {
   display: none;

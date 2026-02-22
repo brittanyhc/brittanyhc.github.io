@@ -297,9 +297,10 @@
         <div class="skills-column">
           <h3>Languages</h3>
           <ul class="skills-list">
-            <li>English — Native</li>
-            <li>Spanish — Native</li>
-            <li>French — Native</li>
+            <!-- Edit: Removed proficiency level per request -->
+            <li>English</li>
+            <li>Spanish</li>
+            <li>French</li>
           </ul>
         </div>
         <div class="skills-column">
@@ -341,7 +342,8 @@
             <span class="contact-icon">📞</span>
             <span>787-373-6569</span>
           </a>
-          <a href="https://www.linkedin.com/in/brittanyherrera" target="_blank" class="contact-item">
+          <!-- Edit: Updated LinkedIn URL -->
+          <a href="https://www.linkedin.com/in/brittany-herrera-contreras-029b04177/" target="_blank" class="contact-item">
             <span class="contact-icon">💼</span>
             <span>LinkedIn</span>
           </a>
@@ -377,6 +379,32 @@
         navToggle.classList.remove('active');
       });
     });
+
+    // Edit: Highlight the current section in the top navigation.
+    const topNavLinks = document.querySelectorAll('.nav-links a');
+    const pageSections = Array.from(document.querySelectorAll('section[id]'));
+
+    const setActiveNavLink = () => {
+      const scrollPosition = window.scrollY + 120;
+      let activeSectionId = '';
+
+      pageSections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          activeSectionId = section.id;
+        }
+      });
+
+      topNavLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        const isActive = href === `#${activeSectionId}`;
+        link.classList.toggle('active', isActive);
+      });
+    };
+
+    window.addEventListener('scroll', setActiveNavLink);
+    window.addEventListener('load', setActiveNavLink);
 
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
