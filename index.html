@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brittany A. Herrera Contreras — Medical Student</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">B. Herrera</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#volunteer">Volunteer</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-container">
+      <div class="hero-image">
+        <img src="files/briittanyherrerayale.jpg" alt="Brittany A. Herrera Contreras" />
+      </div>
+      <div class="hero-text">
+        <p class="hero-greeting">Hello, I'm</p>
+        <h1>Brittany A. Herrera Contreras</h1>
+        <p class="hero-subtitle">MD Candidate · San Juan Bautista School of Medicine</p>
+        <p class="hero-tagline">Passionate about dermatology, research, and leveraging AI to transform healthcare.</p>
+        <div class="hero-buttons">
+          <a href="#about" class="btn btn-primary">Learn More</a>
+          <a href="#contact" class="btn btn-outline">Get In Touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I am a medical student at San Juan Bautista School of Medicine in Caguas, Puerto Rico, currently in my third year of training. As the daughter of Colombian immigrants, born in the United States and raised in Canada, I bring a unique multicultural perspective to my medical education and patient care.
+          </p>
+          <p>
+            My passion lies at the intersection of dermatology, research, and technology. I am particularly interested in how AI can be used beyond the doctor-patient interaction to improve the medical system and patient outcomes. Having completed clinical rotations in various specialties, I have developed a deep appreciation for culturally competent care — something my trilingual fluency in English, Spanish, and French allows me to provide.
+          </p>
+          <p>
+            Outside medicine, I dedicate my time to volunteering at local clinics, participating in community health initiatives, and pursuing research in dermatology and public health. When I need a break, you'll find me playing soccer, going on long walks, drawing, swimming, or playing Dungeons and Dragons.
+          </p>
+        </div>
+        <div class="about-highlights">
+          <div class="highlight-card">
+            <span class="highlight-icon">🩺</span>
+            <h3>Dermatology</h3>
+            <p>Focused on dermatological research and clinical care</p>
+          </div>
+          <div class="highlight-card">
+            <span class="highlight-icon">🤖</span>
+            <h3>AI in Medicine</h3>
+            <p>Exploring AI to improve healthcare systems</p>
+          </div>
+          <div class="highlight-card">
+            <span class="highlight-icon">🌎</span>
+            <h3>Trilingual</h3>
+            <p>Fluent in English, Spanish, and French</p>
+          </div>
+          <div class="highlight-card">
+            <span class="highlight-icon">🔬</span>
+            <h3>Researcher</h3>
+            <p>Multiple publications and presentations</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section class="section section-alt" id="education">
+    <div class="container">
+      <h2 class="section-title">Education</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Aug 2023 — May 2027 (Expected)</span>
+            <h3>Doctor of Medicine (MD)</h3>
+            <p class="timeline-place">San Juan Bautista School of Medicine, Caguas, PR</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Sep 2019 — Apr 2023</span>
+            <h3>B.S. Biomedical Science <span class="badge">Computing Minor</span></h3>
+            <p class="timeline-place">University of Waterloo, ON, Canada</p>
+            <p class="timeline-detail">Graduated with Dean's Honours · President's Scholarship recipient ($2,000)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Section -->
+  <section class="section" id="research">
+    <div class="container">
+      <h2 class="section-title">Research Experience</h2>
+      <div class="research-grid">
+
+        <div class="research-card">
+          <div class="research-status">Ongoing</div>
+          <h3>Hidradenitis Suppurativa &amp; Systemic Lupus Erythematosus</h3>
+          <p class="research-affiliation">Yale School of Medicine, Department of Dermatology</p>
+          <p>Investigating the association between HS and SLE using the All of Us database.</p>
+          <div class="research-presentations">
+            <span class="tag">Yale Derm Research Symposium 2025</span>
+            <span class="tag">Rheumatologic Derm Society ePoster</span>
+          </div>
+        </div>
+
+        <div class="research-card">
+          <div class="research-status status-submitted">Submitted</div>
+          <h3>Rethinking RAG for Medicine</h3>
+          <p class="research-affiliation">Yale BIDS</p>
+          <p>Large-scale systematic expert evaluation of Retrieval-Augmented Generation effectiveness in LLM responses to medical queries.</p>
+          <div class="research-presentations">
+            <span class="tag">Submitted Nov 2025</span>
+          </div>
+        </div>
+
+        <div class="research-card">
+          <div class="research-status">Ongoing</div>
+          <h3>Diabetes Type 2 &amp; Eating Habits in Puerto Rico</h3>
+          <p class="research-affiliation">San Juan Bautista School of Medicine</p>
+          <p>Cross-sectional REDCap survey study exploring dietary habits and diabetes prevalence in Puerto Rico.</p>
+        </div>
+
+        <div class="research-card">
+          <div class="research-status">Ongoing</div>
+          <h3>Ventral Tubercle: Anthropological &amp; Clinical Implications</h3>
+          <p class="research-affiliation">San Juan Bautista School of Medicine</p>
+          <p>Literary review on the clinical significance of the carotid (Chassaignac's) tubercle at C6.</p>
+          <div class="research-presentations">
+            <span class="tag">SJBSM Symposium</span>
+            <span class="tag">New England Science Symposium</span>
+            <span class="tag">American Anatomy Association</span>
+          </div>
+        </div>
+
+        <div class="research-card">
+          <div class="research-status status-published">Published</div>
+          <h3>Composite Small Mature B-Cell Lymphomas</h3>
+          <p class="research-affiliation">SJB &amp; University of South Florida, Morsani College of Medicine</p>
+          <p>Case report on rare lymphoma requiring multimodal diagnostics (SLL/CLL and Follicular Lymphoma).</p>
+          <div class="research-presentations">
+            <span class="tag">USF Health Research Day</span>
+            <span class="tag">FL Society of Pathologists</span>
+          </div>
+        </div>
+
+        <div class="research-card">
+          <div class="research-status status-completed">Completed</div>
+          <h3>Augmenting All of Us with Text-to-SQL</h3>
+          <p class="research-affiliation">Yale School of Medicine SRP</p>
+          <p>Evaluated ChatGPT's ability to generate accurate SQL queries for the All of Us health database.</p>
+          <div class="research-presentations">
+            <span class="tag">SJBSM Symposium 2025</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Volunteer Section -->
+  <section class="section section-alt" id="volunteer">
+    <div class="container">
+      <h2 class="section-title">Volunteer &amp; Community Service</h2>
+      <div class="volunteer-grid">
+
+        <div class="volunteer-card">
+          <h3>El Punto en la Montaña</h3>
+          <p class="volunteer-location">Caguas, PR</p>
+          <p>Cleaned and treated ulcers and wounds for patients struggling with drug addiction.</p>
+        </div>
+
+        <div class="volunteer-card">
+          <h3>Clínica Campo Alegre</h3>
+          <p class="volunteer-location">San Juan, PR</p>
+          <p>Provided health services including medical history, vitals, glucose monitoring, and government health insurance guidance.</p>
+        </div>
+
+        <div class="volunteer-card">
+          <h3>Hygiene &amp; Skin Care Education</h3>
+          <p class="volunteer-location">Multiple Schools, PR</p>
+          <p>Delivered interactive presentations on hygiene and skin care to students ranging from kindergarteners to high schoolers across four schools.</p>
+        </div>
+
+        <div class="volunteer-card">
+          <h3>Artes Sin Límites</h3>
+          <p class="volunteer-location">Fundación Puertorriqueña de Síndrome Down, San Juan</p>
+          <p>Built meaningful connections through one-on-one art creation and dialogue with participants.</p>
+        </div>
+
+        <div class="volunteer-card">
+          <h3>HAVEN Free Clinic</h3>
+          <p class="volunteer-location">Sexual &amp; Reproductive Health Dept.</p>
+          <p>Facilitated patient-provider communication as an interpreter; collected vitals and histories.</p>
+        </div>
+
+        <div class="volunteer-card">
+          <h3>Enlace Derm</h3>
+          <p class="volunteer-location">Clínica de la Mujer Metro 2</p>
+          <p>Conducted patient interviews, assisted with quality-of-life questionnaires, and educated patients on dermatological conditions.</p>
+        </div>
+
+        <div class="volunteer-card">
+          <h3>Punto de Esperanza Clinic</h3>
+          <p class="volunteer-location">Santurce, PR</p>
+          <p>Provided blood pressure/glucose monitoring, medical history intake, HIV testing, and health education sessions.</p>
+        </div>
+
+        <div class="volunteer-card">
+          <h3>Food Support Service Office</h3>
+          <p class="volunteer-location">University of Waterloo</p>
+          <p>Led 20+ volunteers addressing campus food insecurity; implemented a food storage system that decreased waste by 15%.</p>
+        </div>
+
+        <div class="volunteer-card">
+          <h3>Campus Response Team</h3>
+          <p class="volunteer-location">University of Waterloo</p>
+          <p>Provided essential first aid during major campus events; trained in vitals and first aid techniques.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="section" id="experience">
+    <div class="container">
+      <h2 class="section-title">Work Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Aug 2021 — Jul 2023</span>
+            <h3>IST Student Computer Consultant</h3>
+            <p class="timeline-place">University of Waterloo</p>
+            <p class="timeline-detail">Managed and prioritized multiple technical requests. Updated knowledge of technical and account procedures, enhancing departmental efficiency.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Jul 2021 — Dec 2021</span>
+            <h3>Instructor</h3>
+            <p class="timeline-place">Little Medical School</p>
+            <p class="timeline-detail">Crafted and delivered classes on medical concepts to young students.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="section section-alt" id="skills">
+    <div class="container">
+      <h2 class="section-title">Skills &amp; Involvement</h2>
+      <div class="skills-grid">
+        <div class="skills-column">
+          <h3>Technical Skills</h3>
+          <ul class="skills-list">
+            <li>Python programming &amp; data analysis</li>
+            <li>Database systems (FileMaker) &amp; Excel</li>
+            <li>Scientific literature review</li>
+            <li>All of Us Researcher</li>
+            <li>CPR-C Certified</li>
+          </ul>
+        </div>
+        <div class="skills-column">
+          <h3>Languages</h3>
+          <ul class="skills-list">
+            <li>English — Native</li>
+            <li>Spanish — Native</li>
+            <li>French — Native</li>
+          </ul>
+        </div>
+        <div class="skills-column">
+          <h3>Clubs &amp; Organizations</h3>
+          <ul class="skills-list">
+            <li>Dermatology Interest Group Association — Social Media Manager &amp; MS3 Rep</li>
+            <li>SJB Dermatology Trainee Advocacy Group</li>
+            <li>SJB Diabetes Type 1 Group — Secretary</li>
+            <li>Latino Medical Student Association</li>
+            <li>SJB Scuba Diving &amp; Snorkeling Club</li>
+          </ul>
+        </div>
+        <div class="skills-column">
+          <h3>Hobbies &amp; Interests</h3>
+          <ul class="skills-list">
+            <li>Drawing &amp; painting</li>
+            <li>Computer programming</li>
+            <li>Soccer &amp; swimming</li>
+            <li>Rock climbing &amp; kayaking</li>
+            <li>Dungeons &amp; Dragons</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section" id="contact">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="contact-content">
+        <p class="contact-text">I'm always open to discussing research collaborations, clinical opportunities, or anything medicine and technology. Feel free to reach out!</p>
+        <div class="contact-links">
+          <a href="mailto:brittanyhc@sanjuanbautista.edu" class="contact-item">
+            <span class="contact-icon">✉️</span>
+            <span>brittanyhc@sanjuanbautista.edu</span>
+          </a>
+          <a href="tel:787-373-6569" class="contact-item">
+            <span class="contact-icon">📞</span>
+            <span>787-373-6569</span>
+          </a>
+          <a href="https://www.linkedin.com/in/brittanyherrera" target="_blank" class="contact-item">
+            <span class="contact-icon">💼</span>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2026 Brittany A. Herrera Contreras. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile menu toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      navToggle.classList.toggle('active');
+    });
+
+    // Close menu on link click
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        navToggle.classList.remove('active');
+      });
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const offset = 70;
+          const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Fade-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.section').forEach(section => {
+      section.classList.add('fade-in');
+      observer.observe(section);
+    });
+  </script>
+
+</body>
+</html>
