@@ -1,0 +1,935 @@
+/* =============================================================
+   🩺 MEDICAL MODE — "Scrub In" Easter-egg Theme
+   All rules scoped under body.medical-mode so they have
+   zero impact when the class is absent.
+   ============================================================= */
+
+/* ── Transition for every element when toggling ── */
+.medical-mode *,
+.medical-mode *::before,
+.medical-mode *::after {
+  transition: background 0.5s ease, color 0.4s ease, border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+/* ────────────────────────────────────────────────
+   1. COLOR PALETTE / BASE OVERRIDES
+   ──────────────────────────────────────────────── */
+.medical-mode {
+  background: #F5F5F0 !important;
+  color: #212121 !important;
+  font-family: 'Courier Prime', 'Courier New', monospace !important;
+  line-height: 1.75;
+}
+
+/* Subtle graph-paper background */
+.medical-mode::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 27px,
+      rgba(46,125,50,0.06) 27px,
+      rgba(46,125,50,0.06) 28px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 27px,
+      rgba(46,125,50,0.06) 27px,
+      rgba(46,125,50,0.06) 28px
+    );
+}
+
+/* ────────────────────────────────────────────────
+   2. TYPOGRAPHY OVERRIDES
+   ──────────────────────────────────────────────── */
+.medical-mode h1,
+.medical-mode h2,
+.medical-mode h3,
+.medical-mode .section-title,
+.medical-mode .nav-logo {
+  font-family: 'Caveat', cursive !important;
+  color: #2E7D32 !important;
+  letter-spacing: 0.01em;
+}
+
+.medical-mode .section-title::after {
+  background: #2E7D32 !important;
+}
+
+.medical-mode p,
+.medical-mode li,
+.medical-mode span,
+.medical-mode a {
+  color: #212121;
+}
+
+.medical-mode .tag,
+.medical-mode .badge,
+.medical-mode .timeline-date,
+.medical-mode .research-affiliation,
+.medical-mode .volunteer-location {
+  font-family: 'IBM Plex Mono', monospace !important;
+  font-size: 0.78rem;
+}
+
+/* ────────────────────────────────────────────────
+   3. NAVBAR → HOSPITAL WRISTBAND
+   ──────────────────────────────────────────────── */
+.medical-mode .navbar {
+  background: #FFFFFF !important;
+  border-bottom: 3px solid #C8E6C9;
+  border-left: 6px solid #2E7D32;
+  border-radius: 0 0 40px 0;
+  box-shadow: 0 2px 12px rgba(46,125,50,0.10);
+  padding: 0.5rem 0 !important;
+}
+
+.medical-mode .navbar.scrolled {
+  background: rgba(255,255,255,0.97) !important;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 4px 20px rgba(46,125,50,0.12);
+}
+
+.medical-mode .nav-logo {
+  font-family: 'Caveat', cursive !important;
+  font-size: 1.6rem !important;
+  color: #2E7D32 !important;
+}
+
+/* Show "Dr. Nini" via a data-attribute swap (JS sets this) */
+.medical-mode .nav-logo .medical-label {
+  display: inline;
+}
+.medical-mode .nav-logo .normal-label {
+  display: none;
+}
+.nav-logo .medical-label {
+  display: none;
+}
+
+.medical-mode .nav-links a {
+  color: #212121 !important;
+  font-family: 'IBM Plex Mono', monospace !important;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.medical-mode .nav-links a::after {
+  background: #2E7D32 !important;
+}
+
+.medical-mode .nav-links a:hover,
+.medical-mode .nav-links a.active {
+  color: #2E7D32 !important;
+}
+
+/* Decorative barcode on the right of the wristband */
+.medical-mode .nav-container::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 24px;
+  flex-shrink: 0;
+  margin-left: 1rem;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #212121 0px, #212121 2px,
+      transparent 2px, transparent 4px,
+      #212121 4px, #212121 5px,
+      transparent 5px, transparent 8px,
+      #212121 8px, #212121 9px,
+      transparent 9px, transparent 11px,
+      #212121 11px, #212121 14px,
+      transparent 14px, transparent 16px,
+      #212121 16px, #212121 17px,
+      transparent 17px, transparent 20px
+    );
+  opacity: 0.18;
+  border-radius: 2px;
+}
+
+/* ────────────────────────────────────────────────
+   4. HERO → PATIENT ADMISSION FORM
+   ──────────────────────────────────────────────── */
+.medical-mode .hero {
+  background: #F5F5F0 !important;
+  position: relative;
+  border-bottom: 2px dashed #C8E6C9;
+}
+
+/* Rx watermark */
+.medical-mode .hero::before {
+  content: '℞';
+  position: absolute;
+  bottom: -40px;
+  right: 40px;
+  font-size: 360px;
+  font-family: 'Playfair Display', serif;
+  color: rgba(46,125,50,0.05);
+  transform: rotate(-15deg);
+  pointer-events: none;
+  z-index: 0;
+  line-height: 1;
+}
+
+.medical-mode .hero-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Patient info badge above the hero text */
+.medical-mode .hero-text {
+  border: 2px solid #C8E6C9;
+  border-radius: 8px;
+  padding: 2rem 2.5rem;
+  background: #fff;
+  position: relative;
+}
+
+.medical-mode .hero-text::before {
+  content: '📋 PATIENT INFORMATION';
+  position: absolute;
+  top: -13px;
+  left: 16px;
+  background: #F5F5F0;
+  padding: 0 10px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #2E7D32;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.medical-mode .hero-greeting {
+  color: #616161 !important;
+  font-family: 'IBM Plex Mono', monospace !important;
+  font-size: 0.85rem !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+}
+
+.medical-mode .hero-greeting::before {
+  content: 'Name: ';
+  font-weight: 700;
+  color: #2E7D32;
+}
+
+.medical-mode .hero h1 {
+  font-family: 'Caveat', cursive !important;
+  color: #212121 !important;
+  font-size: 2.8rem;
+  border-bottom: 1px solid #C8E6C9;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.75rem !important;
+}
+
+.medical-mode .hero-subtitle {
+  color: #616161 !important;
+  font-family: 'IBM Plex Mono', monospace !important;
+  font-size: 0.9rem !important;
+}
+
+.medical-mode .hero-subtitle::before {
+  content: 'Admission: ';
+  font-weight: 700;
+  color: #2E7D32;
+}
+
+.medical-mode .hero-tagline {
+  color: #444 !important;
+  font-style: italic;
+  border-left: 3px solid #2E7D32;
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+}
+
+.medical-mode .hero-tagline::before {
+  content: 'Chief Complaint: ';
+  font-style: normal;
+  font-weight: 700;
+  color: #2E7D32;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.82rem;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.medical-mode .hero-image img {
+  border: 4px solid #2E7D32 !important;
+  box-shadow: 0 8px 30px rgba(46,125,50,0.15) !important;
+}
+
+/* Buttons — medical style */
+.medical-mode .btn-primary {
+  background: #2E7D32 !important;
+  color: #fff !important;
+  border-radius: 6px !important;
+  font-family: 'IBM Plex Mono', monospace !important;
+  text-transform: uppercase;
+  font-size: 0.82rem !important;
+  letter-spacing: 0.06em;
+}
+
+.medical-mode .btn-primary:hover {
+  background: #1B5E20 !important;
+  box-shadow: 0 6px 20px rgba(46,125,50,0.3) !important;
+}
+
+.medical-mode .btn-outline {
+  border-color: #2E7D32 !important;
+  color: #2E7D32 !important;
+  border-radius: 6px !important;
+  font-family: 'IBM Plex Mono', monospace !important;
+  text-transform: uppercase;
+  font-size: 0.82rem !important;
+  letter-spacing: 0.06em;
+}
+
+.medical-mode .btn-outline:hover {
+  background: #2E7D32 !important;
+  color: #fff !important;
+}
+
+/* ────────────────────────────────────────────────
+   5. ABOUT → PATIENT HISTORY
+   ──────────────────────────────────────────────── */
+.medical-mode #about {
+  background: #F5F5F0 !important;
+}
+
+.medical-mode #about .section-title {
+  text-align: left !important;
+  padding-left: 1.2rem;
+  border-left: 5px solid #2E7D32;
+  font-size: 2.4rem !important;
+}
+
+.medical-mode #about .section-title::after {
+  display: none !important;
+}
+
+/* Ruled-line effect on the text area */
+.medical-mode .about-text {
+  background:
+    repeating-linear-gradient(
+      transparent,
+      transparent 27px,
+      #C8E6C9 27px,
+      #C8E6C9 28px
+    );
+  padding: 0.5rem 1rem;
+  border: 1px solid #C8E6C9;
+  border-radius: 4px;
+}
+
+.medical-mode .about-text p {
+  font-family: 'Caveat', cursive !important;
+  font-size: 1.15rem !important;
+  line-height: 28px !important;
+  color: #333 !important;
+}
+
+.medical-mode .highlight-card {
+  background: #E8F5E9 !important;
+  border: 1px solid #C8E6C9;
+  box-shadow: 0 2px 8px rgba(46,125,50,0.06);
+}
+
+.medical-mode .highlight-card h3 {
+  color: #2E7D32 !important;
+  font-family: 'IBM Plex Mono', monospace !important;
+  font-size: 0.9rem !important;
+}
+
+.medical-mode .highlight-card p {
+  color: #616161 !important;
+  font-size: 0.8rem !important;
+}
+
+/* ────────────────────────────────────────────────
+   6. EDUCATION → MEDICAL RECORDS
+   ──────────────────────────────────────────────── */
+.medical-mode #education {
+  background: #E8F5E9 !important;
+}
+
+.medical-mode #education .section-title {
+  color: #2E7D32 !important;
+}
+
+.medical-mode .timeline::before {
+  background: #2E7D32 !important;
+}
+
+.medical-mode .timeline-marker {
+  background: #2E7D32 !important;
+  box-shadow: 0 0 0 2px #2E7D32 !important;
+}
+
+.medical-mode .timeline-date {
+  color: #2E7D32 !important;
+  font-family: 'IBM Plex Mono', monospace !important;
+}
+
+.medical-mode .timeline-content h3 {
+  font-family: 'Caveat', cursive !important;
+  font-size: 1.4rem;
+  color: #212121 !important;
+}
+
+.medical-mode .badge {
+  background: #C8E6C9 !important;
+  color: #2E7D32 !important;
+}
+
+/* ────────────────────────────────────────────────
+   7. RESEARCH → LAB RESULTS / DIAGNOSTIC REPORTS
+   ──────────────────────────────────────────────── */
+.medical-mode #research .section-title::before {
+  content: '🔬 ';
+}
+
+.medical-mode .research-card {
+  background: #fff !important;
+  border-left: 4px solid #1565C0 !important;
+  border: 2px solid #C8E6C9;
+  border-left: 4px solid #1565C0 !important;
+  border-radius: 4px !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* "LABORATORY REPORT" header bar on each card */
+.medical-mode .research-card::before {
+  content: 'LABORATORY REPORT';
+  display: block;
+  background: #E8F5E9;
+  color: #2E7D32;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.4rem 1rem;
+  margin: -1.75rem -1.75rem 1rem -1.75rem;
+  border-bottom: 1px solid #C8E6C9;
+}
+
+/* Diagonal "REVIEWED" watermark */
+.medical-mode .research-card::after {
+  content: 'REVIEWED';
+  position: absolute;
+  bottom: 16px;
+  right: -18px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: rgba(46,125,50,0.10);
+  letter-spacing: 0.15em;
+  transform: rotate(-25deg);
+  pointer-events: none;
+}
+
+.medical-mode .research-card h3 {
+  font-family: 'Caveat', cursive !important;
+  font-size: 1.25rem;
+  color: #212121 !important;
+}
+
+.medical-mode .research-card h3::before {
+  content: 'Test Name: ';
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  color: #2E7D32;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.1rem;
+}
+
+.medical-mode .research-card p {
+  color: #444 !important;
+}
+
+.medical-mode .research-status {
+  background: #C8E6C9 !important;
+  color: #2E7D32 !important;
+  border-radius: 3px !important;
+  font-family: 'IBM Plex Mono', monospace !important;
+}
+
+.medical-mode .research-status.status-submitted {
+  background: #FFF3E0 !important;
+  color: #E65100 !important;
+}
+
+.medical-mode .research-status.status-published {
+  background: #E3F2FD !important;
+  color: #1565C0 !important;
+}
+
+.medical-mode .research-status.status-completed {
+  background: #ECEFF1 !important;
+  color: #616161 !important;
+}
+
+.medical-mode .tag {
+  background: #E3F2FD !important;
+  color: #1565C0 !important;
+  border-radius: 20px;
+  font-family: 'IBM Plex Mono', monospace !important;
+}
+
+/* ────────────────────────────────────────────────
+   8. VOLUNTEER → CLINICAL VOLUNTEER LOG
+   ──────────────────────────────────────────────── */
+.medical-mode #volunteer {
+  background: #E8F5E9 !important;
+}
+
+.medical-mode .volunteer-card {
+  background: #FFF !important;
+  border: 1px solid #C8E6C9;
+  border-left: 4px solid #2E7D32;
+  border-radius: 4px !important;
+}
+
+.medical-mode .volunteer-card h3 {
+  font-family: 'Caveat', cursive !important;
+  font-size: 1.3rem;
+  color: #2E7D32 !important;
+}
+
+.medical-mode .volunteer-location {
+  color: #1565C0 !important;
+  font-family: 'IBM Plex Mono', monospace !important;
+}
+
+/* ────────────────────────────────────────────────
+   9. EXPERIENCE → CLINICAL ROTATIONS LOG
+   ──────────────────────────────────────────────── */
+.medical-mode #experience {
+  background: #F5F5F0 !important;
+}
+
+/* ────────────────────────────────────────────────
+   10. SKILLS → VITAL SIGNS
+   ──────────────────────────────────────────────── */
+.medical-mode #skills {
+  background: #1a1a2e !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.medical-mode #skills .section-title {
+  color: #4CAF50 !important;
+  text-shadow: 0 0 20px rgba(76,175,80,0.3);
+}
+
+.medical-mode #skills .section-title::after {
+  background: #4CAF50 !important;
+}
+
+/* ECG line container (injected by JS above the skills grid) */
+.medical-mode .ecg-container {
+  width: 100%;
+  overflow: hidden;
+  height: 60px;
+  margin-bottom: 2rem;
+}
+
+.medical-mode .ecg-container svg {
+  width: 100%;
+  height: 60px;
+}
+
+.medical-mode .skills-grid {
+  gap: 1.5rem;
+}
+
+.medical-mode .skills-column {
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(76,175,80,0.25);
+  border-radius: 10px;
+  padding: 1.5rem;
+  position: relative;
+  backdrop-filter: blur(4px);
+}
+
+.medical-mode .skills-column h3 {
+  font-family: 'IBM Plex Mono', monospace !important;
+  color: #4CAF50 !important;
+  font-size: 0.85rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  border-bottom: 1px solid rgba(76,175,80,0.3) !important;
+  padding-bottom: 0.75rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.medical-mode .skills-list li {
+  color: #E8F5E9 !important;
+  font-family: 'IBM Plex Mono', monospace !important;
+  font-size: 0.85rem !important;
+  padding: 0.5rem 0 0.5rem 1.6rem !important;
+  border-bottom: 1px solid rgba(76,175,80,0.08);
+  position: relative;
+}
+
+.medical-mode .skills-list li::before {
+  content: '●' !important;
+  color: #4CAF50 !important;
+  text-shadow: 0 0 8px rgba(76,175,80,0.6);
+  font-size: 0.7rem;
+  position: absolute;
+  left: 0.2rem;
+}
+
+/* Small animated pulse dot */
+.medical-mode .skills-list li::after {
+  content: '';
+  position: absolute;
+  left: 0.35rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: 0 0 6px rgba(76,175,80,0.5);
+  animation: vitalPulse 2s ease-in-out infinite;
+  animation-delay: calc(var(--i, 0) * 0.35s);
+}
+
+@keyframes vitalPulse {
+  0%, 100% { box-shadow: 0 0 4px rgba(76,175,80,0.2); }
+  50% { box-shadow: 0 0 12px rgba(76,175,80,0.7); }
+}
+
+/* ────────────────────────────────────────────────
+   11. CONTACT → REFERRAL FORM / CONSULTATION REQUEST
+   ──────────────────────────────────────────────── */
+.medical-mode #contact {
+  background: #F5F5F0 !important;
+  position: relative;
+}
+
+.medical-mode #contact .section-title::before {
+  content: '℞ ';
+  font-family: 'Playfair Display', serif;
+}
+
+.medical-mode .contact-content {
+  background: #fff;
+  border: 2px solid #C8E6C9;
+  border-radius: 6px;
+  padding: 2.5rem 2rem;
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Prescription pad header */
+.medical-mode .contact-content::before {
+  content: '℞';
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem;
+  color: #2E7D32;
+  background: #F5F5F0;
+  padding: 0 1rem;
+  font-family: 'Playfair Display', serif;
+  line-height: 1;
+}
+
+.medical-mode .contact-text {
+  color: #616161 !important;
+  font-style: italic;
+  font-family: 'Caveat', cursive !important;
+  font-size: 1.15rem !important;
+  border-bottom: 1px dashed #C8E6C9;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.medical-mode .contact-item {
+  background: #E8F5E9 !important;
+  border: 1px solid #C8E6C9;
+  border-radius: 6px !important;
+  font-family: 'IBM Plex Mono', monospace !important;
+  font-size: 0.88rem !important;
+  color: #212121 !important;
+}
+
+.medical-mode .contact-item:hover {
+  background: #2E7D32 !important;
+  color: #fff !important;
+  border-color: #2E7D32;
+  box-shadow: 0 6px 20px rgba(46,125,50,0.25) !important;
+}
+
+/* ────────────────────────────────────────────────
+   12. FOOTER → CHART FOOTER
+   ──────────────────────────────────────────────── */
+.medical-mode .footer {
+  background: #fff !important;
+  border-top: 2px solid #C8E6C9;
+  color: #616161 !important;
+  font-family: 'Courier Prime', 'Courier New', monospace !important;
+  position: relative;
+  padding: 2.5rem 2rem 2rem !important;
+}
+
+.medical-mode .footer::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: repeating-linear-gradient(
+    90deg,
+    #C8E6C9 0px,
+    #C8E6C9 6px,
+    transparent 6px,
+    transparent 12px
+  );
+}
+
+.medical-mode .footer p {
+  color: #616161 !important;
+}
+
+/* Injected footer note (by JS) */
+.medical-mode .footer .medical-footer-note {
+  display: block;
+  margin-top: 0.5rem;
+  font-style: italic;
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.footer .medical-footer-note {
+  display: none;
+}
+
+/* ────────────────────────────────────────────────
+   13. SECTION-ALT OVERRIDES
+   ──────────────────────────────────────────────── */
+.medical-mode .section-alt {
+  background: #E8F5E9 !important;
+}
+
+/* ────────────────────────────────────────────────
+   14. SCRUB-IN TOGGLE BUTTON
+   ──────────────────────────────────────────────── */
+#medical-toggle-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid rgba(150,150,150,0.3);
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.35s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  animation: subtlePulse 10s ease-in-out infinite;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  line-height: 1;
+  padding: 0;
+}
+
+#medical-toggle-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(0,0,0,0.14);
+  border-color: rgba(46,125,50,0.4);
+}
+
+#medical-toggle-btn:active {
+  transform: scale(0.95);
+}
+
+@keyframes subtlePulse {
+  0%, 90%, 100% { transform: scale(1); }
+  93% { transform: scale(1.12); }
+  96% { transform: scale(1); }
+}
+
+/* Active state (medical mode on) */
+.medical-mode #medical-toggle-btn {
+  background: #2E7D32 !important;
+  border-color: #1B5E20;
+  color: #fff;
+  box-shadow: 0 4px 24px rgba(46,125,50,0.30);
+}
+
+.medical-mode #medical-toggle-btn:hover {
+  background: #1B5E20 !important;
+}
+
+/* ────────────────────────────────────────────────
+   15. SCRUB-IN/OUT OVERLAY
+   ──────────────────────────────────────────────── */
+#scrub-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: rgba(46, 125, 50, 0.88);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+#scrub-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+#scrub-overlay .scrub-text {
+  font-family: 'Caveat', cursive;
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.2);
+  animation: scrubTextPop 0.8s ease forwards;
+}
+
+#scrub-overlay .scrub-emoji {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  animation: scrubEmojiPop 0.8s ease forwards;
+}
+
+@keyframes scrubTextPop {
+  0% { opacity: 0; transform: scale(0.8) translateY(10px); }
+  30% { opacity: 1; transform: scale(1.05) translateY(0); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes scrubEmojiPop {
+  0% { opacity: 0; transform: scale(0.5) rotate(-10deg); }
+  50% { opacity: 1; transform: scale(1.15) rotate(5deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+/* ────────────────────────────────────────────────
+   16. ECG HEARTBEAT ANIMATION
+   ──────────────────────────────────────────────── */
+.ecg-line {
+  stroke: #4CAF50;
+  stroke-width: 2;
+  fill: none;
+  filter: drop-shadow(0 0 6px rgba(76,175,80,0.5));
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation: ecgDraw 2.5s linear infinite;
+}
+
+@keyframes ecgDraw {
+  to { stroke-dashoffset: 0; }
+}
+
+/* ────────────────────────────────────────────────
+   17. RESPONSIVE — MEDICAL MODE
+   ──────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .medical-mode .hero-text {
+    padding: 1.5rem;
+  }
+
+  .medical-mode .hero::before {
+    font-size: 200px;
+    right: 10px;
+    bottom: -20px;
+  }
+
+  .medical-mode .research-card::before {
+    margin: -1.75rem -1.75rem 0.75rem -1.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .medical-mode .navbar {
+    border-radius: 0 !important;
+  }
+
+  .medical-mode .nav-container::after {
+    display: none;
+  }
+
+  .medical-mode .hero::before {
+    font-size: 140px;
+    opacity: 0.03;
+  }
+
+  .medical-mode .skills-column {
+    padding: 1.2rem;
+  }
+
+  #scrub-overlay .scrub-text {
+    font-size: 2rem;
+  }
+
+  #scrub-overlay .scrub-emoji {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  #medical-toggle-btn {
+    bottom: 16px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
+
+  .medical-mode .hero-text::before {
+    font-size: 0.65rem;
+  }
+
+  .medical-mode .hero h1 {
+    font-size: 2rem;
+  }
+
+  .medical-mode #about .section-title {
+    font-size: 1.8rem !important;
+  }
+
+  .medical-mode .about-text p {
+    font-size: 1rem !important;
+    line-height: 28px !important;
+  }
+
+  .medical-mode .ecg-container {
+    height: 40px;
+    margin-bottom: 1rem;
+  }
+
+  .medical-mode .ecg-container svg {
+    height: 40px;
+  }
+}

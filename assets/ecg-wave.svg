@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 60" preserveAspectRatio="none">
+  <!-- ECG PQRST waveform repeated twice -->
+  <path class="ecg-line" d="
+    M 0,30
+    L 30,30
+    L 40,30
+    L 50,26
+    L 55,30
+    L 70,30
+    L 80,30
+    L 85,30
+    L 90,8
+    L 95,52
+    L 100,22
+    L 105,30
+    L 120,30
+    L 130,30
+    L 140,24
+    L 155,24
+    L 165,30
+    L 180,30
+    L 210,30
+    L 220,30
+    L 230,26
+    L 235,30
+    L 250,30
+    L 260,30
+    L 265,30
+    L 270,8
+    L 275,52
+    L 280,22
+    L 285,30
+    L 300,30
+    L 310,30
+    L 320,24
+    L 335,24
+    L 345,30
+    L 360,30
+    L 390,30
+    L 400,30
+    L 410,26
+    L 415,30
+    L 430,30
+    L 440,30
+    L 445,30
+    L 450,8
+    L 455,52
+    L 460,22
+    L 465,30
+    L 480,30
+    L 490,30
+    L 500,24
+    L 515,24
+    L 525,30
+    L 540,30
+    L 570,30
+    L 600,30
+  "
+  stroke="#4CAF50"
+  stroke-width="2"
+  fill="none"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  />
+</svg>
